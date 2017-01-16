@@ -20,5 +20,17 @@
  * @return {number[][]}
  */
 var threeSum = function(nums) {
+    var nums = nums.sort(),
+    	i = 0;
+    	j = i + 1,
+    	k = nums.length-1;
+
     
+
+
 };
+
+var numS = [-1, 0, 1, 2, -1, -4];
+
+debug(threeSum(numS));
+

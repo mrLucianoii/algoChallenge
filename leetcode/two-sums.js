@@ -13,8 +13,7 @@ You may assume that each input would have exactly one solution.
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-   var hash = {},
-    result = [];
+   var result = [];
    
     for(var i=0; i<nums.length; i++){
         if(result.hasOwnProperty(nums[i])){
@@ -26,7 +25,7 @@ var twoSum = function(nums, target) {
 };
 
 var test = [3, 4, 5, 12, 3],
-x = 7;
+x = 17;
 
 debug(twoSum(test, x));
 
