@@ -24,49 +24,18 @@ var Rotate = {
 }
 
 Rotate.run = function ( targetMatrix ){
-  var index = 0,
-    demensions = targetMatrix.length,
-    rowLength = targetMatrix[0].length;
+  
+  function swap( a, b ){
+    var j = targetMatrix[a[0]][a[1]];
+    targetMatrix[a[0]][a[1]] = targetMatrix[b[0]][b[1]];
+    targetMatrix[b[0]][b[1]] = j;
+  }
 
-    debug(demensions);
-    debug(rowLength);
-
-    // Swap 1
-    var temp = targetMatrix [ index ][ 0 ];
-    targetMatrix[ index ][ 0 ] = targetMatrix [ index ][ 1 ];
-    targetMatrix[ index ][ 1 ] = temp;
-
-    // Swap 2
-    temp = targetMatrix [ index ][ 0 ];
-    targetMatrix[ index ][ 0 ] = targetMatrix [ index+1 ][ 1 ];
-    targetMatrix[ index+1 ][ 1 ] = temp;
-
-
-    // Swap 3
-    temp = targetMatrix [ index ][ 0 ];
-    targetMatrix[ index ][ 0 ] = targetMatrix [ index+1 ][ 0 ];
-    targetMatrix[ index+1 ][ 0 ] = temp;
-
-
-//  while ( index < demensions ){
-      for ( var i = 0; i < targetMatrix[ index ].length; i++){
-
-
-      }
-      //index++;
-//    }
-
+    swap([0, 0], [0, 1]);
+    swap([0, 0], [1, 1]);
+    swap([0, 0], [1, 0]);
+    
     return targetMatrix;
-}
-
-Rotate.cornerSwap = function ( a, b ) {
-
-  var i = a;
-    a = b;
-    b = i;
-
-    return [ a, b ];
-
 }
 
 //debug( matrixOneByOne );
@@ -116,5 +85,41 @@ function RotateMatrix( targeMatrix ) {
 }
 
 debug(RotateMatrix(matrix));
+
+// another dead end:
+  var index = 0,
+    demensions = targetMatrix.length,
+    rowLength = targetMatrix[0].length;
+
+    debug(demensions);
+    debug(rowLength);
+
+    // Swap 1
+    var temp = targetMatrix [ index ][ 0 ];
+    targetMatrix[ index ][ 0 ] = targetMatrix [ index ][ 1 ];
+    targetMatrix[ index ][ 1 ] = temp;
+
+    // Swap 2
+    temp = targetMatrix [ index ][ 0 ];
+    targetMatrix[ index ][ 0 ] = targetMatrix [ index+1 ][ 1 ];
+    targetMatrix[ index+1 ][ 1 ] = temp;
+
+
+    // Swap 3
+    temp = targetMatrix [ index ][ 0 ];
+    targetMatrix[ index ][ 0 ] = targetMatrix [ index+1 ][ 0 ];
+    targetMatrix[ index+1 ][ 0 ] = temp;
+
+
+//  while ( index < demensions ){
+      for ( var i = 0; i < targetMatrix[ index ].length; i++){
+
+
+      }
+      //index++;
+//    }
+
+    return targetMatrix;
+
 
 */
